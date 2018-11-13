@@ -13,9 +13,10 @@ type Configuration struct {
 }
 
 type Page struct {
-	Path   string
-	Status int
-	Body   string
+	Path    string
+	Status  int
+	Body    string
+	Headers []string
 }
 
 func DefaultConfig() Configuration {

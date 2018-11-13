@@ -42,4 +42,10 @@ var _ = Describe("Configurator Tests", func() {
 		Ω(c.IPAddress).Should(Equal("127.0.0.1"))
 	})
 
+	It("should read an array of page headers from the configuration", func() {
+		c := ReadJSON(`{"Pages":[{"Path":"/","Status": 200,"Body":"Body", "Headers":["key1:val1","key2:val2"]}]}`)
+		Ω(c.Pages[0].Headers[0]).Should(Equal("key1:val1"))
+		Ω(c.Pages[0].Headers[1]).Should(Equal("key2:val2"))
+	})
+
 })

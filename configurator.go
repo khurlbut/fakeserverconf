@@ -6,23 +6,29 @@ import (
 	"log"
 )
 
-type Config struct {
+type Configuration struct {
+	Pages []*Page
+}
+
+type Page struct {
 	Path   string
 	Status int
 	Body   string
 }
 
-type Configuration []*Config
-
 func DefaultConfig() Configuration {
-	c := &Config{
+	p := &Page{
 		Path:   "/",
 		Status: 200,
 		Body:   "Welcome to fakeserver. This is the Default configuration for Root path (/)",
 	}
-	configs := []*Config{c}
+	pages := []*Page{p}
 
-	return configs
+	config := &Configuration{
+		Pages: pages,
+	}
+
+	return *config
 }
 
 func ReadJSON(json string) Configuration {

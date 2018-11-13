@@ -38,8 +38,8 @@ var _ = Describe("Configurator Tests", func() {
 	})
 
 	It("should read an IP address string from the configuration", func() {
-		c := ReadJSON(`{"IPAddress": "host", "Pages":[]}`)
-		Ω(c.IPAddress).Should(Equal("host"))
+		c := ReadJSON(`{"IPAddress": "127.0.0.1", "Pages":[]}`)
+		Ω(c.IPAddress).Should(Equal("127.0.0.1"))
 	})
 
 })

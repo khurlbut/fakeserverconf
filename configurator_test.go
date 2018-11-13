@@ -33,8 +33,8 @@ var _ = Describe("Configurator Tests", func() {
 	})
 
 	It("should read a port number from the configuration", func() {
-		c := ReadJSON(`{"Port": 8000, "Pages":[]}`)
-		Ω(c.Port).Should(Equal(8000))
+		c := ReadJSON(`{"Port": "8000", "Pages":[]}`)
+		Ω(c.Port).Should(Equal("8000"))
 	})
 
 	It("should read an IP address string from the configuration", func() {

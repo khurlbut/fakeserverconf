@@ -8,7 +8,7 @@ import (
 
 type Configuration struct {
 	IPAddress string
-	Port      int
+	Port      string
 	Pages     []*Page
 }
 

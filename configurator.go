@@ -7,7 +7,9 @@ import (
 )
 
 type Configuration struct {
-	Pages []*Page
+	IPAddress string
+	Port      int
+	Pages     []*Page
 }
 
 type Page struct {

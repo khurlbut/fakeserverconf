@@ -6,19 +6,23 @@ import (
 	"log"
 )
 
+// Configuration site configuration structure
 type Configuration struct {
 	IPAddress string
 	Port      string
 	Pages     []*Page
 }
 
+// Page page configuration structure
 type Page struct {
 	Path    string
 	Status  int
 	Body    string
 	Headers []string
+	Cookies []string
 }
 
+// DefaultConfig configuruation to use if none other is specified
 func DefaultConfig() Configuration {
 	p := &Page{
 		Path:   "/",
@@ -34,10 +38,12 @@ func DefaultConfig() Configuration {
 	return *config
 }
 
+// ReadJSON read configuration from JSON string
 func ReadJSON(json string) Configuration {
 	return unmarshal([]byte(json))
 }
 
+// ReadJSONFile read configuration from JSON file
 func ReadJSONFile(path string) Configuration {
 	bytes, err := ioutil.ReadFile(path)
 	if err != nil {

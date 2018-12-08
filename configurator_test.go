@@ -54,4 +54,10 @@ var _ = Describe("Configurator Tests", func() {
 		Ω(c.Pages[0].Cookies[1]).Should(Equal("cook2:val2"))
 	})
 
+	It("should read an array of injection keys from the configuration", func() {
+		c := ReadJSON(`{"Pages":[{"Path":"/","Status": 200,"Body":"Body", "InjectionKeys:" ["path", "uri"], Headers":["key1:val1","key2:val2"], "Cookies":["cook1:val1","cook2:val2"]}]}`)
+		Ω(c.Pages[0].InjectionKeys[0]).Should(Equal("path"))
+		Ω(c.Pages[0].InjectionKeys[1]).Should(Equal("uri"))
+	})
+
 })

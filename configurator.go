@@ -15,11 +15,12 @@ type Configuration struct {
 
 // Page page configuration structure
 type Page struct {
-	Path    string
-	Status  int
-	Body    string
-	Headers []string
-	Cookies []string
+	Path          string
+	Status        int
+	Body          string
+	Headers       []string
+	Cookies       []string
+	InjectionKeys []string
 }
 
 // DefaultConfig configuruation to use if none other is specified

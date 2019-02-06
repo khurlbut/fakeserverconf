@@ -1,0 +1,1 @@
+{"Pages":[{"Path":"/","Status": 200,"Body":"Body", "InjectionKeys": ["path", "uri"], "Headers":["key1:val1","key2:val2"], "Cookies":["cook1:val1","cook2:val2"], "ServiceEndpoints": ["uri1","uri2","uri3"]}]}
